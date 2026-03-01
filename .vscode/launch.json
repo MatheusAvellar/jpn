@@ -1,0 +1,17 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"command": "npx tsc --build && npx vite build",
+			"name": "Build",
+			"request": "launch",
+			"type": "node-terminal"
+		},
+		{
+			"command": "npx vite",
+			"name": "Run dev",
+			"request": "launch",
+			"type": "node-terminal"
+		}
+	]
+}

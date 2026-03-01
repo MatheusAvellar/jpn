@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+}
+html {
+	display: grid;
+	min-height: 100%;
+}
+body {
+	margin: 0;
+}
+#root {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	gap: 1rem;
+	min-height: 100%;
+}
+header, main, footer {
+	padding: 0 1rem;
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+}
+main {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	height: 100%;
+	gap: 1rem;
+}
+footer {
+	padding-bottom: 1rem;
+}
