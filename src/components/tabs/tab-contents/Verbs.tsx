@@ -12,7 +12,7 @@ const possibleConjugations: VerbConjugation[] = [
 ];
 
 export default function Verbs() {
-	const romanjiInput = useContext(InputContext);
+	const romajiInput = useContext(InputContext);
 
 	const verbs = [
 		new IchidanVerb("呉れる", {"呉":"く"}, ["to give"]),
@@ -78,7 +78,7 @@ export default function Verbs() {
 							currentVerb.furigana
 						)}
 					</div>
-					<div>{romanjiInput}</div>
+					<div>{romajiInput}</div>
 				</div>
 			)}
 		</>

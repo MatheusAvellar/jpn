@@ -3,10 +3,11 @@ import { useState } from "react";
 import TabHeader from "./TabHeader";
 import TabContent from "./TabContent";
 import Home from "./tab-contents/Home";
-import Kana from "./tab-contents/Kana";
-import Verbs from "./tab-contents/Verbs";
+import Numbers from "./tab-contents/Numbers";
+// import Kana from "./tab-contents/Kana";
+// import Verbs from "./tab-contents/Verbs";
 // import Adjectives from "./tab-contents/Adjectives";
-import Sentences from "./tab-contents/Sentences";
+// import Sentences from "./tab-contents/Sentences";
 
 
 export default function Tabs() {
@@ -16,17 +17,19 @@ export default function Tabs() {
 		<>
 			<TabHeader setSelectedTab={setSelectedTab}>
 				<span>Home</span>
-				<span>Kana</span>
-				<span>Verbs</span>
+				<span>Numbers</span>
+				{/* <span>Kana</span> */}
+				{/* <span>Verbs</span> */}
 				{/* <span>Adjectives</span> */}
-				<span>Sentences</span>
+				{/* <span>Sentences</span> */}
 			</TabHeader>
 			<TabContent selectedTab={selectedTab}>
 				<Home/>
-				<Kana/>
-				<Verbs/>
+				<Numbers/>
+				{/* <Kana/> */}
+				{/* <Verbs/> */}
 				{/* <Adjectives/> */}
-				<Sentences/>
+				{/* <Sentences/> */}
 			</TabContent>
 		</>
 	);
