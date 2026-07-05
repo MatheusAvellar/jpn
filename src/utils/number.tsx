@@ -1,5 +1,10 @@
 import type { ReactNode } from "react";
 
+interface JPWord {
+	furigana: string;
+	kanji: string;
+}
+
 const mapping = {
 	1: { furigana: "いち", kanji: "一", },
 	2: { furigana: "に", kanji: "二", },
@@ -40,35 +45,36 @@ export class NumberJP {
 	constructor(value: number) {
 		this.value = value;
 	}
-	toString(): string {
-		return `<Number(${this.value})>`;
-	}
 
-	static toHTML(value?: number): ReactNode[] {
-		if(!value) return [""];
+	#_toArray(): JPWord[] {
+		const value = this.value;
+		if(!value) return [];
 
 		const powers = splitByPowersOf10(value);
-		return powers.map((n, idx) => {
-			if(n.value in mapping) {
-				const obj = mapping[n.value];
+		return powers.map(n => {
+			if(n.value in mapping)
+				return mapping[n.value as keyof typeof mapping];
+
+			const unit = mapping[n.digit as keyof typeof mapping];
+			const power = n.power === 1 ? null : mapping[n.power as keyof typeof mapping];
+			return [unit, power].filter(v => !!v);
+		}).flat();
+	}
+
+	toString(kanji?: boolean): string {
+		return this.#_toArray().map(v => kanji ? v.kanji : v.furigana).join("");
+	}
+
+	toHTML(kanji?: boolean): ReactNode[] {
+		return this.#_toArray().map((obj, idx) => {
+			if(kanji)
 				return (
 					<ruby key={idx}>
 						{obj.kanji}
 						<rp>[</rp><rt>{obj.furigana}</rt><rp>]</rp>
 					</ruby>
 				);
-			}
-			const unit = mapping[n.digit];
-			const power = n.power === 1 ? null : mapping[n.power];
-			return [unit, power].filter(v => !!v).map((obj, i) => {
-				return (
-					<ruby key={`${idx}-${i}`}>
-						{obj.kanji}
-						<rp>[</rp><rt>{obj.furigana}</rt><rp>]</rp>
-					</ruby>
-				);
-			});
-		})
+			return <span key={idx}>{obj.furigana}</span>;
+		});
 	}
-
 };

@@ -3,10 +3,11 @@ import { tabStyle, labelStyle } from "./styles.css.ts";
 
 interface TabHeaderProps {
 	children: ReactNode[];
+	defaultChecked: number;
 	setSelectedTab: Dispatch<SetStateAction<number>>;
 };
 
-export default function TabHeader({ children, setSelectedTab }: TabHeaderProps) {
+export default function TabHeader({ children, setSelectedTab, defaultChecked }: TabHeaderProps) {
 	const tabs = [...children];
 
 	return (
@@ -20,7 +21,7 @@ export default function TabHeader({ children, setSelectedTab }: TabHeaderProps) 
 								value={`tab-${i}`}
 								type="radio"
 								name="tab"
-								defaultChecked={i === 0}
+								defaultChecked={i === defaultChecked}
 								onChange={() => setSelectedTab(i)}
 								style={{ appearance: "none", position: "absolute" }}
 								/>

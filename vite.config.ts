@@ -13,7 +13,10 @@ export default defineConfig({
 			babel: {
 				plugins: [["babel-plugin-react-compiler"]],
 			},
-		}),
+		} as any),
 		vanillaExtractPlugin()
 	],
+	server: {
+		allowedHosts: ["lh"],
+	},
 })

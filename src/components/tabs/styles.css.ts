@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
+// TABS
 export const tabStyle = style({
 	display: "flex",
 	borderBottom: "1px solid",
@@ -15,5 +16,6 @@ export const labelStyle = style({
 		"input:checked + &": {
 			backgroundColor: "#eee"
 		}
-	}
+	},
+	lineHeight: "1",
 });
