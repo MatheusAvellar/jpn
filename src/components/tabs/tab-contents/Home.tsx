@@ -1,14 +1,22 @@
+import { FormattedMessage } from "react-intl";
 
 
 export default function Home() {
-	return (<>
-		<h2>Home</h2>
-		<div style={{ marginBottom: "1rem" }}></div>
-		<p>Hey :)</p>
-		<p>
-			This was inspired by Bailey Snyder's great{" "}
-			<a href="https://baileysnyder.com/jconj/">Japanese Conjugation Practice</a>
-			{" "}page.
-		</p>
-	</>);
+	return (
+		<div style={{ padding: "1rem" }}>
+			<p>
+				<FormattedMessage id="home.msg-welcome-line1"/>
+			</p>
+			<p>
+				<FormattedMessage
+					id="home.msg-welcome-line2"
+					values={{
+						// Replaces <link>...</link> from string
+						link: (chunk) => (
+							<a href="https://baileysnyder.com/jconj/">{chunk}</a>
+						)
+					}}/>
+			</p>
+		</div>
+	);
 };

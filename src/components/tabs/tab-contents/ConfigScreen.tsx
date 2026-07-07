@@ -1,6 +1,7 @@
 import Dialog from "@/components/dialog/Dialog";
 import { settingsOptions, useSettings } from "@/utils/settings";
 import { useRef, useState } from "react";
+import { FormattedMessage } from "react-intl";
 
 
 export default function ConfigScreen() {
@@ -27,7 +28,7 @@ export default function ConfigScreen() {
 
 	return <>
 		<span id="settings-message" ref={messageElement}>
-			Settings saved!
+			<FormattedMessage id="settings.msg-saved"/>
 		</span>
 		<style>{`
 #settings-message {
@@ -57,12 +58,7 @@ export default function ConfigScreen() {
 								>
 									{settingsOptions[options].map((opt, idx) => {
 										return (
-											<option
-												key={idx}
-												value={opt}
-											>
-												{opt}
-											</option>
+											<option key={idx} value={opt}>{opt}</option>
 										);
 									})}
 								</select>
@@ -73,7 +69,7 @@ export default function ConfigScreen() {
 			})}
 		</ol>
 		<button className="big-red-btn" onClick={() => setIsDialogOpen(true)}>
-			Reset settings
+			<FormattedMessage id="settings.btn-reset"/>
 		</button>
 		<style>{`
 button.big-red-btn {
@@ -91,15 +87,15 @@ button.big-red-btn:is(:focus-visible, :active) {
 		</style>
 		<Dialog isOpen={isDialogOpen} setIsOpen={setIsDialogOpen}>
 			<h2 style={{ margin: 0 }}>
-				Reset settings
+				<FormattedMessage id="settings.btn-reset"/>
 			</h2>
-			<p>Are you sure?</p>
+			<p><FormattedMessage id="settings.msg-are-you-sure"/></p>
 			<hr/>
 			<div style={{ display: "flex", justifyContent: "space-between", gap: "1rem" }}>
 				<button
 					onClick={() => setIsDialogOpen(false) }
 				>
-					No sorry I didn't mean it
+					<FormattedMessage id="settings.btn-dont-reset"/>
 				</button>
 				<button
 					className="big-red-btn"
@@ -108,7 +104,7 @@ button.big-red-btn:is(:focus-visible, :active) {
 						setIsDialogOpen(false);
 					}}
 				>
-					DELETE IT ALL
+					<FormattedMessage id="settings.btn-reset-for-real"/>
 				</button>
 			</div>
 		</Dialog>

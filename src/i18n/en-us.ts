@@ -1,0 +1,51 @@
+export default {
+	"title": "JPN – Japanese Learning Tool",
+	"footer": "Made with <3 by Matheus Avellar — Rio de Janeiro, 2026",
+
+	// Tab titles
+	"tab.settings": "⚙️",
+	"tab.home": "Home",
+	"tab.numbers": "Numbers",
+	"tab.vocabulary": "Vocabulary",
+
+	// Settings page
+	"settings.msg-saved": "Settings saved!",
+	"settings.btn-reset": "Reset settings",
+	"settings.msg-are-you-sure": "Are you sure?",
+	"settings.btn-dont-reset": "no sorry I didn't mean it",
+	"settings.btn-reset-for-real": "DELETE IT ALL",
+
+	// Home page
+	"home.msg-welcome-line1": "Hey :)",
+	"home.msg-welcome-line2": [
+		"This was inspired by Bailey Snyder's great <link>Japanese Conjugation Practice</link> page.",
+		"However, that project focuses on verb conjugation, and I needed to practice more than just that."
+	].join(" "),
+
+	// Vocabulary page
+	"vocabulary.option.family": "かぞく – Family",
+	"vocabulary.option.occupations": "しょくぎょう – Occupations",
+	"vocabulary.option.misc": "Misc.",
+
+	"vocabulary.family.grandparents": "Grandparents",
+	"vocabulary.family.grandpa": "Grandfather",
+	"vocabulary.family.grandma": "Grandmother",
+	"vocabulary.family.parents": "Parents",
+	"vocabulary.family.father": "Father",
+	"vocabulary.family.mother": "Mother",
+	"vocabulary.family.uncle": "Uncle",
+	"vocabulary.family.aunt": "Aunt",
+	"vocabulary.family.couple": "Couple",
+	"vocabulary.family.husband": "Husband",
+	"vocabulary.family.wife": "Wife",
+	"vocabulary.family.children": "Children",
+	"vocabulary.family.son": "Son",
+	"vocabulary.family.daughter": "Daughter",
+	"vocabulary.family.siblings": "Siblings",
+	"vocabulary.family.sisters": "Sisters",
+	"vocabulary.family.older-brother": "Older brother",
+	"vocabulary.family.older-sister": "Older sister",
+	"vocabulary.family.younger-brother": "Younger brother",
+	"vocabulary.family.younger-sister": "Younger sister",
+	"vocabulary.family.you": "You 🙂",
+}

@@ -23,8 +23,11 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Build website
-        run: npx tsc --build && npx vite build
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Project
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4

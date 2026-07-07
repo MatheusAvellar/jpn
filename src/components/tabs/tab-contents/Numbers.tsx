@@ -21,7 +21,6 @@ export default function Numbers() {
 
 	const correctAnswer = numberString.trim() === inputValue.trim();
 
-
 	const [include100, setInclude100] = useState<boolean>(true);
 	const [include1000, setInclude1000] = useState<boolean>(true);
 	const [include10000, setInclude10000] = useState<boolean>(false);
@@ -77,7 +76,6 @@ export default function Numbers() {
 		nextLevel();
 	}
 
-	
 	useEffect(() => {
 		nextLevel()
 	}, []);  // on mount

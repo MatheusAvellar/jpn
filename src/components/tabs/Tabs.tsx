@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FormattedMessage } from "react-intl";
 
 import TabHeader from "./TabHeader";
 import TabContent from "./TabContent";
@@ -18,14 +19,14 @@ export default function Tabs() {
 	return (
 		<>
 			<TabHeader defaultChecked={selectedTab} setSelectedTab={setSelectedTab}>
-				<>⚙️</>
-				<>Home</>
-				<>Numbers</>
-				{/* <>Kana</> */}
-				{/* <>Verbs</> */}
-				{/* <>Adjectives</> */}
-				{/* <>Sentences</> */}
-				<>Vocabulary</>
+				<FormattedMessage id="tab.settings"/>
+				<FormattedMessage id="tab.home"/>
+				<FormattedMessage id="tab.numbers"/>
+				{/* <FormattedMessage id="tab.kana"/> */}
+				{/* <FormattedMessage id="tab.verbs"/> */}
+				{/* <FormattedMessage id="tab.adjectives"/> */}
+				{/* <FormattedMessage id="tab.sentences"/> */}
+				<FormattedMessage id="tab.vocabulary"/>
 			</TabHeader>
 			<TabContent selectedTab={selectedTab}>
 				<ConfigScreen/>

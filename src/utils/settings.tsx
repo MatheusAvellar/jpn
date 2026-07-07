@@ -2,17 +2,17 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 
 export const settingsOptions = {
 	// theme: ["light", "dark"] as const,
-	// lang: ["en-us", "pt-br"] as const,
+	lang: ["en-us", "pt-br"] as const,
 	kanji: ["yes", "no"] as const,
 };
 interface SettingsProps {
 	// theme: typeof settingsOptions.theme[number];
-	// lang: typeof settingsOptions.lang[number];
+	lang: typeof settingsOptions.lang[number];
 	kanji: typeof settingsOptions.kanji[number];
 };
 const DEFAULT_SETTINGS: SettingsProps = {
 	// theme: "light",
-	// lang: "en-us",
+	lang: "en-us",
 	kanji: "no",
 };
 

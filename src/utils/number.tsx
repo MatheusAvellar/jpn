@@ -1,9 +1,6 @@
 import type { ReactNode } from "react";
+import type { JPWord } from "./word";
 
-interface JPWord {
-	furigana: string;
-	kanji: string;
-}
 
 const mapping = {
 	1: { furigana: "いち", kanji: "一", },

@@ -13,6 +13,7 @@
     "@vanilla-extract/css": "^1.21.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-intl": "^10.1.14",
     "wanakana": "^5.3.1"
   },
   "devDependencies": {

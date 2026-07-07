@@ -29,3 +29,9 @@ main {
 footer {
 	padding-bottom: 1rem;
 }
+
+@media (max-width: 500px) {
+	main {
+		padding: 0 0.25rem;
+	}
+}
