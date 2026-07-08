@@ -4,6 +4,9 @@ import { Fragment } from "react/jsx-runtime";
 import FamilyTree from "./FamilyTree";
 import { useEffect, useState } from "react";
 import RomajiInput from "@/components/input/RomajiInput";
+import Button from "@/components/ui/button/Button";
+import { familyVocab_nextButton, familyVocab_questionWrapper, familyVocab_whoseFamily } from "./styles.css";
+import { feedbackSection_labelStyle } from "@/components/input/styles.css";
 
 
 export const familyMembers = [
@@ -67,7 +70,7 @@ const theirFamily: Record<familyMemberKey, JPWord[]> = {
 	"grandma": [{ furigana: "おばあさん", kanji: "お祖母さん" }],
 
 	"parents": [{ furigana: "ごりょうしん", kanji: "ご両親" }],
-	"father": [{ furigana: "お父さん", kanji: "おとうさん" }],
+	"father": [{ furigana: "おとうさん", kanji: "お父さん" }],
 	"mother": [{ furigana: "おかあさん", kanji: "お母さん" }],
 	"uncle": [{ furigana: "おじさん", kanji: "叔父さん" }],
 	"aunt": [{ furigana: "おばさん", kanji: "叔母さん" }],
@@ -114,7 +117,7 @@ export default function VocabFamily() {
 		setInputValue("");
 
 		// setWordsSeen(wordsSeen+1);
-		const randomFamily = Math.random()*2 >= 0.5;
+		const randomFamily = Math.random() >= 0.5;
 		setIsYourFamily(randomFamily);
 		let randomMember = currentMember;
 		while(randomMember === currentMember)
@@ -135,53 +138,43 @@ export default function VocabFamily() {
 	}, []);  // on mount
 
 	return <>
-		<button onClick={nextLevel}>つぎ ➡️</button>
-		<section>
-			<div style={{
-				fontSize: "1.75rem",
-				fontWeight: "600",
-				textAlign: "center",
-				color: isYourFamily ? "#2196f3" : "chocolate",
-			}}>
+		<Button
+			onClick={nextLevel}
+			className={familyVocab_nextButton}
+		>
+			つぎ <strong>&rarr;</strong>
+		</Button>
+		<section className={familyVocab_questionWrapper}>
+			<div
+				className={familyVocab_whoseFamily}
+				style={{ color: isYourFamily ? "#2196f3" : "chocolate", }}
+			>
 				{isYourFamily ? "あなた" : "あいて"}
 			</div>
 			<FamilyTree highlight={currentMember} isYourFamily={isYourFamily}/>
 		</section>
-		<section>
-			<div style={{ fontSize: "3rem", lineHeight: "1" }}>
-				{levelDone && (correctAnswer ? "⭕" : "❌") || "\xa0"}
-			</div>
-			<div style={{ fontSize: "1.5rem" }}>
-				{levelDone
-					? <>
-						<span>せいかい: </span>
-						<span>
-							{words.map((word, idx) => {
-								return <>
-									{idx > 0 && "\xa0 / \xa0"}
-									<span key={idx}>
-										{JPWordToHTML(word, showKanji)}
-									</span>
-								</>
-							})}
-						</span>
-					</>
-					: "\xa0"}
-			</div>
-			<div style={{ fontSize: "1.5rem" }}>
-				{levelDone
-					? <>
-						<span>あなたの: </span>
-						<span style={{ color: correctAnswer ? "#00cb55" : "#e52727" }}>
-							{inputValue}
-						</span>
-					</>
-					: "\xa0"}
-			</div>
-		</section>
 		<RomajiInput
 			inputValue={inputValue}
 			setInputValue={setInputValue} 
-			onSubmit={onSubmit}/>
+			onSubmit={onSubmit}
+		>
+			{levelDone && (
+				<>
+					<div className={feedbackSection_labelStyle}>
+						{correctAnswer ? "⭕" : "❌"} せいかい:
+					</div>
+					<div style={{ lineHeight: "1.5" }}>
+						{words.map((word, idx) => {
+							return <Fragment key={idx}>
+								{idx > 0 && "\xa0 / \xa0"}
+								<span>
+									{JPWordToHTML(word, showKanji)}
+								</span>
+							</Fragment>
+						})}
+					</div>
+				</>
+			)}
+		</RomajiInput>
 	</>;
 };

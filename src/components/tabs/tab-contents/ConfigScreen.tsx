@@ -1,4 +1,4 @@
-import Dialog from "@/components/dialog/Dialog";
+import Dialog from "@/components/ui/dialog/Dialog";
 import { settingsOptions, useSettings } from "@/utils/settings";
 import { useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";

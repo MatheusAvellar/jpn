@@ -1,12 +1,24 @@
 import { style } from "@vanilla-extract/css";
 
 
+export const familyVocab_nextButton = style({
+	float: "right",
+});
+export const familyVocab_questionWrapper = style({
+	clear: "both",
+	marginTop: ".5rem",
+});
+export const familyVocab_whoseFamily = style({
+	fontSize: "2rem",
+	fontWeight: "600",
+	textAlign: "center",
+});
+
+
 export const familyTree = style({
 	display: "flex",
 	flexDirection: "column",
 	gap: "2rem",
-	border: "1px solid",
-	padding: "0.25rem",
 	maxWidth: "30rem",
 	margin: "auto",
 });
@@ -16,6 +28,7 @@ export const familyGroup = style({
 	gap: "1rem",
 	justifyContent: "center",
 	alignItems: "flex-end",
+	flexWrap: "wrap",
 	border: "1px solid",
 	padding: "0.25rem",
 	"@media": {
@@ -27,7 +40,7 @@ export const familyGroup = style({
 
 export const person = style({
 	border: "1px solid",
-	width: "4.5rem",
+	width: "5.5rem",
 	height: "2rem",
 	display: "flex",
 	justifyContent: "center",

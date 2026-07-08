@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { tabContentStyle } from "./styles.css";
 
 interface TabContentProps {
 	children: ReactNode[];
@@ -9,7 +10,7 @@ export default function TabContent({ children, selectedTab }: TabContentProps) {
 	const tabs = [...children];
 
 	return (
-		<section>
+		<section className={tabContentStyle}>
 			{tabs[selectedTab]}
 		</section>
 	);

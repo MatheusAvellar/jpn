@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 
 import VocabFamily from "./vocabulary-contents/VocabFamily";
+import { selectStyle } from "@/components/ui/select/styles.css";
 
 
 export default function Vocabulary() {
@@ -10,6 +11,7 @@ export default function Vocabulary() {
 	return <>
 		<select
 			name="vocab-choice"
+			className={selectStyle}
 			value={vocabChoice}
 			onChange={(e) => setVocabChoice(e.target.value)}
 		>

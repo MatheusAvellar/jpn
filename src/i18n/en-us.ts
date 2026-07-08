@@ -1,7 +1,4 @@
 export default {
-	"title": "JPN – Japanese Learning Tool",
-	"footer": "Made with <3 by Matheus Avellar — Rio de Janeiro, 2026",
-
 	// Tab titles
 	"tab.settings": "⚙️",
 	"tab.home": "Home",
@@ -21,6 +18,9 @@ export default {
 		"This was inspired by Bailey Snyder's great <link>Japanese Conjugation Practice</link> page.",
 		"However, that project focuses on verb conjugation, and I needed to practice more than just that."
 	].join(" "),
+
+	"home.human-made": "Human Made",
+	"home.msg-human-made-project": "This project is 100% human made; no heartless AI touched it.",
 
 	// Vocabulary page
 	"vocabulary.option.family": "かぞく – Family",
@@ -48,4 +48,5 @@ export default {
 	"vocabulary.family.younger-brother": "Younger brother",
 	"vocabulary.family.younger-sister": "Younger sister",
 	"vocabulary.family.you": "You 🙂",
+	"vocabulary.family.someone": "Someone",
 }

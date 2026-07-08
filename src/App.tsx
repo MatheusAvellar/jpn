@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
+import { IntlProvider } from "react-intl";
 
 import { useSettings } from "@/utils/settings";
 import Tabs from "@/components/tabs/Tabs";
@@ -21,17 +21,9 @@ export default function App() {
 
 	return (
 		<IntlProvider locale={locale} messages={messages}>
-			<header>
-				<h1>
-					<FormattedMessage id="title"/>
-				</h1>
-			</header>
 			<main>
 				<Tabs/>
 			</main>
-			<footer>
-				<FormattedMessage id="footer"/>
-			</footer>
 		</IntlProvider>
 	);
 };

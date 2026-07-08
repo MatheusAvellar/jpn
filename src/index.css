@@ -4,34 +4,41 @@
 html {
 	display: grid;
 	min-height: 100%;
+	font-family: "Inter var", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+	--accent-light: aliceblue;
+	--accent: #dbf3ff;
+	--accent-dark: #73aceb;
+
+	--grey-light: #f0f0f0;
+	--grey: #d7d7d7;
+	--grey-dark: #b0b0b0;
+
+	--black-light: #777;
+	--black: #444;
+	--black-dark: #010101;
+
+	--color-anata: #2196f3;
+	--color-answer-correct: #00cb55;
+	--color-answer-incorrect: #e52727;
+
+	--border-radius-sm: 2px;
+	--border-radius-md: 4px;
+	--border-radius-lg: 8px;
 }
 body {
 	margin: 0;
 }
 #root {
 	display: grid;
-	grid-template-rows: auto 1fr auto;
-	gap: 1rem;
 	min-height: 100%;
 }
-header, main, footer {
-	padding: 0 1rem;
-	width: 100%;
-	max-width: 800px;
-	margin: auto;
-}
 main {
+	position: relative;
 	display: grid;
 	grid-template-rows: auto 1fr;
 	height: 100%;
-	gap: 1rem;
-}
-footer {
-	padding-bottom: 1rem;
-}
-
-@media (max-width: 500px) {
-	main {
-		padding: 0 0.25rem;
-	}
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
 }

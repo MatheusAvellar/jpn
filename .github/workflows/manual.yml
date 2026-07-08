@@ -10,24 +10,34 @@ permissions:
   pages: write
   id-token: write
 
+# [Ref] https://ashishb.net/programming/common-pitfalls-of-github-actions/
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_and_deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+        with:
+          version: 11
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: "24"
 
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Build Project
-        run: npm run build
+        run: npx tsc --build && npx vite build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4

@@ -1,24 +1,28 @@
 export default {
-	"title": "JPN – Ferramenta de Aprendizado de Japonês",
-	"footer": "Feito com <3 por Matheus Avellar — Rio de Janeiro, 2026",
-
+	//
 	"tab.settings": "⚙️",
 	"tab.home": "Home",
 	"tab.numbers": "Números",
 	"tab.vocabulary": "Vocabulário",
 
+	//
 	"settings.msg-saved": "Configurações salvas!",
 	"settings.btn-reset": "Resetar configurações",
 	"settings.msg-are-you-sure": "Você tem certeza?",
 	"settings.btn-dont-reset": "não perai foi sem querer",
 	"settings.btn-reset-for-real": "EXPLODIR TUDO",
 
+	//
 	"home.msg-welcome-line1": "Oie :)",
 	"home.msg-welcome-line2": [
 		"Este projeto foi inspirado na incrível página de Bailey Snyder, <link>Japanese Conjugation Practice</link>.",
 		"Contudo, ela foca em conjugação verbal, e eu precisava praticar mais do que só isso."
 	].join(" "),
 
+	"home.human-made": "Feito Por Humanos",
+	"home.msg-human-made-project": "Este projeto é feito 100% por humanos; nenhuma IA gelada encostou nele.",
+
+	//
 	"vocabulary.option.family": "かぞく – Família",
 	"vocabulary.option.occupations": "しょくぎょう – Profissões",
 	"vocabulary.option.misc": "Misc.",
@@ -44,4 +48,5 @@ export default {
 	"vocabulary.family.younger-brother": "Irmão mais novo",
 	"vocabulary.family.younger-sister": "Irmã mais nova",
 	"vocabulary.family.you": "Você 🙂",
+	"vocabulary.family.someone": "Alguém",
 }

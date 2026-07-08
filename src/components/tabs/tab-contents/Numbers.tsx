@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { NumberJP } from "@/utils/number";
 import { useSettings } from "@/utils/settings";
 import RomajiInput from "@/components/input/RomajiInput";
+import { correctAnswerStyle, incorrectAnswerStyle } from "../styles.css";
+import Button from "@/components/ui/button/Button";
+import { feedbackSection_labelStyle } from "@/components/input/styles.css";
 
 
 export default function Numbers() {
@@ -98,46 +101,26 @@ export default function Numbers() {
 						<option value="4" label="10,000" className={numbers_optionStyle} style={{ textAlign: "right" }}></option>
 					</datalist>
 				</fieldset>
-				<button onClick={nextLevel}>つぎ ➡️</button>
+				<Button onClick={nextLevel}>つぎ <strong>&rarr;</strong></Button>
 			</div>
 			{/* <span>{wordsSeen}</span> */}
-			<div style={{
-				display: "grid",
-				justifyContent: "center", alignItems: "center",
-				textAlign: "center",
-			}}>
-				<div style={{ display: "grid", gap: "1rem" }}>
-					<div className={marqueeStyle}>
-						{levelDone && (correctAnswer ? "⭕" : "❌")}{" "}
-						{currentNumber}{" "}
-						{levelDone && (correctAnswer ? "⭕" : "❌")}
-					</div>
-					<div style={{ fontSize: "1.5rem" }}>
-						{levelDone
-							? <>
-								<span>せいかい: </span>
-								<span>
-									{numberHTML}
-								</span>
-							</>
-							: "\xa0"}
-					</div>
-					<div style={{ fontSize: "1.5rem" }}>
-						{levelDone
-							? <>
-								<span>あなたの: </span>
-								<span style={{ color: correctAnswer ? "#00cb55" : "#e52727" }}>
-									{inputValue}
-								</span>
-							</>
-							: "\xa0"}
-					</div>
-				</div>
-			</div>
+			<div className={marqueeStyle}>{currentNumber}</div>
 			<RomajiInput
 				inputValue={inputValue}
 				setInputValue={setInputValue} 
-				onSubmit={onSubmit}/>
+				onSubmit={onSubmit}
+			>
+				{levelDone && (
+					<>
+						<div className={feedbackSection_labelStyle}>
+							{correctAnswer ? "⭕" : "❌"} せいかい:
+						</div>
+						<div style={{ lineHeight: "1.5" }}>
+							{numberHTML}
+						</div>
+					</>
+				)}
+			</RomajiInput>
 		</>
 	);
 };

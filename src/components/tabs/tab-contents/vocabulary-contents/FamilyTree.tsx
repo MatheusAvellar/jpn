@@ -21,16 +21,14 @@ export default function FamilyTree({ highlight, isYourFamily }: FamilyTreeProps)
 				<Person i18nID="vocabulary.family.grandma" highlight={highlight == "grandma" && color}/>
 			</div>
 		</div>
-		<div>
-			<div className={familyGroup}>
-				<Person i18nID="vocabulary.family.uncle" highlight={highlight == "uncle" && color}/>
-				<Person i18nID="vocabulary.family.aunt" highlight={highlight == "aunt" && color}/>
-				<div>
-					<FormattedMessage id="vocabulary.family.parents"/>
-					<div className={familyGroup} style={{ backgroundColor: highlight == "parents" ? color : "" }}>
-						<Person i18nID="vocabulary.family.father" highlight={highlight == "father" && color}/>
-						<Person i18nID="vocabulary.family.mother" highlight={highlight == "mother" && color}/>
-					</div>
+		<div className={familyGroup} style={{ border: "none" }}>
+			<Person i18nID="vocabulary.family.uncle" highlight={highlight == "uncle" && color}/>
+			<Person i18nID="vocabulary.family.aunt" highlight={highlight == "aunt" && color}/>
+			<div>
+				<FormattedMessage id="vocabulary.family.parents"/>
+				<div className={familyGroup} style={{ backgroundColor: highlight == "parents" ? color : "" }}>
+					<Person i18nID="vocabulary.family.father" highlight={highlight == "father" && color}/>
+					<Person i18nID="vocabulary.family.mother" highlight={highlight == "mother" && color}/>
 				</div>
 			</div>
 		</div>
@@ -53,7 +51,9 @@ export default function FamilyTree({ highlight, isYourFamily }: FamilyTreeProps)
 						<Person i18nID="vocabulary.family.older-sister" highlight={highlight == "older-sister" && color}/>
 					</div>
 				</div>
-				<Person i18nID="vocabulary.family.you" highlight={false}/>
+				<Person
+					i18nID={isYourFamily ? "vocabulary.family.you" : "vocabulary.family.someone"}
+					highlight={false}/>
 			</div>
 		</div>
 		<div>
