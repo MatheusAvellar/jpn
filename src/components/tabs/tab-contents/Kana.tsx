@@ -1,5 +1,5 @@
 
 
-export default function Kana() {
-	return "KANA!!";
-};
+// export default function Kana() {
+// 	return "KANA!!";
+// };

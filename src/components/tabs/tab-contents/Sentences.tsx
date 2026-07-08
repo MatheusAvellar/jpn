@@ -19,6 +19,6 @@
 // 	new Word("ジュース", {}, ["juice", "soft drink"]),
 // 	new Word("醤油", {"醤":"しょう","油":"ゆ"}, ["soy sauce"]),
 
-export default function Sentences() {
-	return "SENTENCES";
-};
+// export default function Sentences() {
+// 	return "SENTENCES";
+// };
