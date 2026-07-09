@@ -2,6 +2,7 @@ import Dialog from "@/components/ui/dialog/Dialog";
 import { settingsOptions, useSettings } from "@/utils/settings";
 import { useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
+import { settingsBigRedButtonStyle, settingsMessageStyle } from "./styles.css";
 
 
 export default function ConfigScreen() {
@@ -27,64 +28,46 @@ export default function ConfigScreen() {
 	}
 
 	return <>
-		<span id="settings-message" ref={messageElement}>
-			<FormattedMessage id="settings.msg-saved"/>
-		</span>
-		<style>{`
-#settings-message {
-	transition: opacity 200ms linear;
-	opacity: 0;
-	color: #3c6fdf;
-}
-#settings-message.shown {
-	transition: none;
-	opacity: 1;
-}
-`}</style>
-		<ol>
-			{Object.keys(settings).map((k, i) => {
-				const key = k as keyof typeof settings;
-				const options = k as keyof typeof settingsOptions;
-				return (
-					<li key={i}>
-						<dl>
-							<dt>
-								<strong>{k}</strong>
-							</dt>
-							<dd>
-								<select
-									onChange={(evt) => onSettingChanged(evt, k)}
-									value={settings[key]}
-								>
-									{settingsOptions[options].map((opt, idx) => {
-										return (
-											<option key={idx} value={opt}>{opt}</option>
-										);
-									})}
-								</select>
-							</dd>
-						</dl>
-					</li>
-				);
-			})}
-		</ol>
-		<button className="big-red-btn" onClick={() => setIsDialogOpen(true)}>
-			<FormattedMessage id="settings.btn-reset"/>
-		</button>
-		<style>{`
-button.big-red-btn {
-	appearance: none;
-	background-color: #ec9898;
-	color: #444;
-	padding: 0.5rem 1rem;
-	border: none;
-	font-weight: 600;
-}
-button.big-red-btn:is(:focus-visible, :active) {
-	background-color: #f5b3b3;
-}
-`}
-		</style>
+		<div>
+			<span ref={messageElement} className={settingsMessageStyle}>
+				<FormattedMessage id="settings.msg-saved"/>
+			</span>
+		</div>
+		<div>
+			<ol>
+				{Object.keys(settings).map((k, i) => {
+					const key = k as keyof typeof settings;
+					const options = k as keyof typeof settingsOptions;
+					return (
+						<li key={i}>
+							<dl>
+								<dt>
+									<strong>{k}</strong>
+								</dt>
+								<dd>
+									<select
+										onChange={(evt) => onSettingChanged(evt, k)}
+										value={settings[key]}
+									>
+										{settingsOptions[options].map((opt, idx) => {
+											return (
+												<option key={idx} value={opt}>{opt}</option>
+											);
+										})}
+									</select>
+								</dd>
+							</dl>
+						</li>
+					);
+				})}
+			</ol>
+			<button
+				className={settingsBigRedButtonStyle}
+				onClick={() => setIsDialogOpen(true)}
+			>
+				<FormattedMessage id="settings.btn-reset"/>
+			</button>
+		</div>
 		<Dialog isOpen={isDialogOpen} setIsOpen={setIsDialogOpen}>
 			<h2 style={{ margin: 0 }}>
 				<FormattedMessage id="settings.btn-reset"/>
@@ -98,7 +81,7 @@ button.big-red-btn:is(:focus-visible, :active) {
 					<FormattedMessage id="settings.btn-dont-reset"/>
 				</button>
 				<button
-					className="big-red-btn"
+					className={settingsBigRedButtonStyle}
 					onClick={() => {
 						resetSettings();
 						setIsDialogOpen(false);

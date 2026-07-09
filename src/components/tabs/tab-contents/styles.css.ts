@@ -17,6 +17,32 @@ export const noAIBadgeStyle = style({
 });
 
 
+export const settingsMessageStyle = style({
+	color: "#3c6fdf",
+	opacity: 0,
+	transition: "opacity 200ms linear",
+	selectors: {
+		"&.shown": {
+			transition: "none",
+			opacity: 1,
+		}
+	}
+});
+
+export const settingsBigRedButtonStyle = style({
+	appearance: "none",
+	backgroundColor: "#ec9898",
+	color: "#444",
+	padding: ".5rem 1rem",
+	border: "none",
+	fontWeight: 600,
+	selectors: {
+		"&:is(:focus-visible, :active)": {
+			backgroundColor: "#f5b3b3",
+		}
+	}
+});
+
 
 export const marqueeStyle = style({
 	fontSize: "5rem",

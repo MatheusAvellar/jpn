@@ -1,16 +1,11 @@
 import { style } from "@vanilla-extract/css";
 
 export const inputWrapperStyle = style({
-	position: "absolute",
-	width: "100%",
-	left: 0,
-	right: 0,
-	bottom: 0,
-
 	display: "flex",
 	flexDirection: "column",
 	rowGap: "1rem",
-
+	
+	width: "100%",
 	padding: "1rem",
 	backgroundColor: "var(--accent-light)",
 });

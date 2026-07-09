@@ -20,7 +20,7 @@ export default {
 	].join(" "),
 
 	"home.human-made": "Feito Por Humanos",
-	"home.msg-human-made-project": "Este projeto é feito 100% por humanos; nenhuma IA gelada encostou nele.",
+	"home.msg-human-made-project": "Este projeto foi feito 100% por humanos! Nenhuma IA gelada encostou nele.",
 
 	//
 	"vocabulary.option.family": "かぞく – Família",

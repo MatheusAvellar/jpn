@@ -38,6 +38,9 @@ export const labelStyle = style({
 
 // CONTENT
 export const tabContentStyle = style({
+	display: "grid",
+	gridTemplateRows: "auto 1fr auto",
+	minHeight: 0,  // [!] insane trick that makes the height work (not a joke)
 	padding: "1rem",
 	"@media": {
 		"(max-width: 500px)": {

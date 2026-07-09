@@ -20,7 +20,7 @@ export default {
 	].join(" "),
 
 	"home.human-made": "Human Made",
-	"home.msg-human-made-project": "This project is 100% human made; no heartless AI touched it.",
+	"home.msg-human-made-project": "This project was 100% made by humans! No heartless AI has touched it.",
 
 	// Vocabulary page
 	"vocabulary.option.family": "かぞく – Family",

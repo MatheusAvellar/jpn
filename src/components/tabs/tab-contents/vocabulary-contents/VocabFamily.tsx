@@ -4,8 +4,7 @@ import { Fragment } from "react/jsx-runtime";
 import FamilyTree from "./FamilyTree";
 import { useEffect, useState } from "react";
 import RomajiInput from "@/components/input/RomajiInput";
-import Button from "@/components/ui/button/Button";
-import { familyVocab_nextButton, familyVocab_questionWrapper, familyVocab_whoseFamily } from "./styles.css";
+import { familyVocab_questionWrapper, familyVocab_whoseFamily } from "./styles.css";
 import { feedbackSection_labelStyle } from "@/components/input/styles.css";
 
 
@@ -91,8 +90,11 @@ const theirFamily: Record<familyMemberKey, JPWord[]> = {
 	"younger-sister": [{ furigana: "いもうとさん", kanji: "妹さん" }],
 };
 
+interface VocabFamilyProps {
+	forceSkipState: number;
+}
 
-export default function VocabFamily() {
+export default function VocabFamily({ forceSkipState }: VocabFamilyProps) {
 	// かぞく
 	const { settings } = useSettings();
 	const showKanji = settings.kanji === "yes";
@@ -135,15 +137,9 @@ export default function VocabFamily() {
 
 	useEffect(() => {
 		nextLevel()
-	}, []);  // on mount
+	}, [forceSkipState]); // skip level whenever parent changes variable
 
 	return <>
-		<Button
-			onClick={nextLevel}
-			className={familyVocab_nextButton}
-		>
-			つぎ <strong>&rarr;</strong>
-		</Button>
 		<section className={familyVocab_questionWrapper}>
 			<div
 				className={familyVocab_whoseFamily}

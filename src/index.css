@@ -2,8 +2,6 @@
 	box-sizing: border-box;
 }
 html {
-	display: grid;
-	min-height: 100%;
 	font-family: "Inter var", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
 	--accent-light: aliceblue;
@@ -29,15 +27,11 @@ html {
 body {
 	margin: 0;
 }
-#root {
-	display: grid;
-	min-height: 100%;
-}
 main {
-	position: relative;
 	display: grid;
 	grid-template-rows: auto 1fr;
-	height: 100%;
+	height: 100svh;
+	max-height: 100svh;
 	width: 100%;
 	max-width: 800px;
 	margin: auto;

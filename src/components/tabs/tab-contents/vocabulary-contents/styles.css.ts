@@ -7,6 +7,7 @@ export const familyVocab_nextButton = style({
 export const familyVocab_questionWrapper = style({
 	clear: "both",
 	marginTop: ".5rem",
+	overflowY: "auto",
 });
 export const familyVocab_whoseFamily = style({
 	fontSize: "2rem",
