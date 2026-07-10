@@ -16,10 +16,18 @@ export const buttonStyle = style({
 
 	transform: "translate(0, -4px)",
 	boxShadow: "0 4px 0 var(--grey)",
-	transition: "transform 50ms ease, box-shadow 50ms ease",
+	transition: "transform 25ms ease, box-shadow 25ms ease",
+
+	// touch-action: none prevents zooming/panning on the element,
+	// but in exchange receives touch events immediately
+	touchAction: "none",
+	userSelect: "none",
+	cursor: "pointer",
+
+	WebkitTapHighlightColor: "transparent",
 
 	selectors: {
-		"&:active": {
+		"&:active, &.active": {
 			backgroundColor: "white",
 			borderColor: "var(--accent-dark)",
 			boxShadow: "0 0px 0 var(--grey)",

@@ -21,9 +21,7 @@ export default function App() {
 
 	return (
 		<IntlProvider locale={locale} messages={messages}>
-			<main>
-				<Tabs/>
-			</main>
+			<Tabs/>
 		</IntlProvider>
 	);
 };

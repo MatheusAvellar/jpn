@@ -16,7 +16,7 @@ interface RomajiInputProps {
 	children?: ReactNode | ReactNode[];
 	inputValue: string;
 	setInputValue: Dispatch<SetStateAction<string>>;
-	onSubmit: (event: SubmitEvent<HTMLFormElement>) => void;
+	onSubmit: () => void;
 };
 
 export default function RomajiInput({ children, inputValue, setInputValue, onSubmit }: RomajiInputProps) {
@@ -31,15 +31,16 @@ export default function RomajiInput({ children, inputValue, setInputValue, onSub
 		setInputValue(inputRef.current?.value || "");
 	}
 
+	function doSubmit() {
+		if(inputValue.endsWith("n")) {
+			// fixme: surely there's a more elegant way
+			setInputValue(inputValue.replace(/n$/i, "ん"));
+		}
+		onSubmit();
+	}
+
 	return (
-		<form className={inputWrapperStyle} onSubmit={(evt) => {
-			evt.preventDefault();
-			if(inputValue.endsWith("n")) {
-				// fixme: surely there's a more elegant way
-				setInputValue(inputValue.replace(/n$/i, "ん"));
-			}
-			onSubmit(evt);
-		}}>
+		<form className={inputWrapperStyle}>
 			<section className={feedbackSectionStyle}>
 				{children}
 			</section>
@@ -53,8 +54,18 @@ export default function RomajiInput({ children, inputValue, setInputValue, onSub
 					value={inputValue}
 					onChange={updateParentContext}
 					onKeyUp={updateParentContext}
-					/>
-				<Button className={inputSubmitStyle}>OK</Button>
+				/>
+				<Button
+					className={inputSubmitStyle}
+					onMouseDown={(evt) => {
+						evt.preventDefault();
+					}}
+					onClick={(evt) => {
+						evt.preventDefault();
+						doSubmit();
+					}}>
+						OK
+					</Button>
 			</section>
 		</form>
 	);
