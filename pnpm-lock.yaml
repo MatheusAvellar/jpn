@@ -12,7 +12,7 @@ importers:
         specifier: ^1.21.0
         version: 1.21.0
       cuelume:
-        specifier: ^0.1.2
+        specifier: 0.1.2
         version: 0.1.2
       react:
         specifier: ^19.2.7
