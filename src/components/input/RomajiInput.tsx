@@ -34,7 +34,11 @@ export default function RomajiInput({ children, inputValue, setInputValue, onSub
 	function doSubmit() {
 		if(inputValue.endsWith("n")) {
 			// fixme: surely there's a more elegant way
-			setInputValue(inputValue.replace(/n$/i, "ん"));
+			setInputValue(
+				inputValue
+				.replace(/n$/i, "ん")
+				.replace(/\s+/g, "")
+			);
 		}
 		onSubmit();
 	}

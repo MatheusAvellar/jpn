@@ -1,6 +1,18 @@
 import type { ReactNode } from "react";
 import type { JPWord } from "./word";
 
+export function splitByPowersOf10(num: number) {
+	const str = Math.abs(num).toString();
+	return str.split("").map((digitStr, index) => {
+		const digit = parseInt(digitStr);
+		const power = 10 ** (str.length - 1 - index);
+		return {
+			digit: digit,
+			power: power,
+			value: digit * power,
+		};
+	}).filter(obj => obj.value !== 0);
+}
 
 const mapping = {
 	1: { furigana: "いち", kanji: "一", },
@@ -23,19 +35,6 @@ const mapping = {
 	10_000: { furigana: "まん", kanji: "万", },
 };
 
-function splitByPowersOf10(num: number) {
-	const str = Math.abs(num).toString();
-	return str.split("").map((digitStr, index) => {
-		const digit = parseInt(digitStr);
-		const power = 10 ** (str.length - 1 - index);
-		return {
-			digit: digit,
-			power: power,
-			value: digit * power,
-		};
-	}).filter(obj => obj.value !== 0);
-}
-
 export class NumberJP {
 	value: number;
 
@@ -43,7 +42,7 @@ export class NumberJP {
 		this.value = value;
 	}
 
-	#_toArray(): JPWord[] {
+	_toArray(): JPWord[] {
 		const value = this.value;
 		if(!value) return [];
 
@@ -59,11 +58,11 @@ export class NumberJP {
 	}
 
 	toString(kanji?: boolean): string {
-		return this.#_toArray().map(v => kanji ? v.kanji : v.furigana).join("");
+		return this._toArray().map(v => kanji ? v.kanji : v.furigana).join("");
 	}
 
 	toHTML(kanji?: boolean): ReactNode[] {
-		return this.#_toArray().map((obj, idx) => {
+		return this._toArray().map((obj, idx) => {
 			if(kanji)
 				return (
 					<ruby key={idx}>

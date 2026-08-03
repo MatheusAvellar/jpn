@@ -7,6 +7,9 @@ export default function Home() {
 
 	return (
 		<div style={{ padding: "1rem" }}>
+			<div style={{ float: "left", padding: "1rem 1rem 1rem 0" }}>
+				<img src="/logo.svg" style={{ width: "5rem", aspectRatio: 1, display: "block" }}/>
+			</div>
 			<p>
 				<FormattedMessage id="home.msg-welcome-line1"/>
 			</p>
@@ -19,6 +22,9 @@ export default function Home() {
 							<a href="https://baileysnyder.com/jconj/">{chunk}</a>
 						)
 					}}/>
+			</p>
+			<p>
+				<FormattedMessage id="home.msg-welcome-line3"/>
 			</p>
 
 			<a

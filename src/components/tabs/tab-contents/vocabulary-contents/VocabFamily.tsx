@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import RomajiInput from "@/components/input/RomajiInput";
 import { familyVocab_questionWrapper, familyVocab_whoseFamily } from "./styles.css";
 import { feedbackSection_labelStyle } from "@/components/input/styles.css";
+import { play } from "cuelume";
 
 
 export const familyMembers = [
@@ -128,15 +129,18 @@ export default function VocabFamily({ forceSkipState }: VocabFamilyProps) {
 	}
 
 	function onSubmit() {
-		if(!levelDone)
-			return setLevelDone(true);
+		if(!levelDone) {
+			setLevelDone(true);
+			play(correctAnswer ? "success": "error");
+			return
+		}
 		// if we've received a second submission, it's likely
 		// the user wants to go to the next level
 		nextLevel();
 	}
 
 	useEffect(() => {
-		nextLevel()
+		nextLevel();
 	}, [forceSkipState]); // skip level whenever parent changes variable
 
 	return <>

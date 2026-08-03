@@ -49,6 +49,7 @@ export const marqueeStyle = style({
 	fontWeight: "700",
 	lineHeight: "1",
 	textAlign: "center",
+	fontVariantNumeric: "tabular-nums",
 });
 
 

@@ -1,6 +1,6 @@
 export default {
 	// Tab titles
-	"tab.settings": "⚙️",
+	"tab.settings": "Settings",
 	"tab.home": "Home",
 	"tab.numbers": "Numbers",
 	"tab.vocabulary": "Vocabulary",
@@ -13,14 +13,25 @@ export default {
 	"settings.btn-reset-for-real": "DELETE IT ALL",
 
 	// Home page
-	"home.msg-welcome-line1": "Hey :)",
+	"home.msg-welcome-line1": "Hey ;P This is a tool for learning Japanese.",
 	"home.msg-welcome-line2": [
-		"This was inspired by Bailey Snyder's great <link>Japanese Conjugation Practice</link> page.",
-		"However, that project focuses on verb conjugation, and I needed to practice more than just that."
+		"This project was inspired by Bailey Snyder's great <link>Japanese Conjugation Practice</link> page.",
+		"However, that focuses on verb conjugation, and I needed to practice more than just that."
+	].join(" "),
+	"home.msg-welcome-line3": [
+		"The logo for this project is a reimagination of the kanji 智 (ち),",
+		"meaning 'knowledge' or 'intellect'.",
+		"It was originally composed of 大 (\"person\") and 口 (\"mouth\"),",
+		"which have been reinterpreted as eyes, on top of 甘 (\"sweet\"/\"pleasant\", a tongue).",
 	].join(" "),
 
 	"home.human-made": "Human Made",
 	"home.msg-human-made-project": "This project was 100% made by humans! No heartless AI has touched it.",
+
+	// Numbers page
+	"numbers.option.cardinals": "きすう – Cardinal numbers",
+	"numbers.option.hours": "じこく – Time of day",
+	"numbers.setting.show-24h-clock": "24h clock",
 
 	// Vocabulary page
 	"vocabulary.option.family": "かぞく – Family",

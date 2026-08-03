@@ -3,6 +3,7 @@ import { settingsOptions, useSettings } from "@/utils/settings";
 import { useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { settingsBigRedButtonStyle, settingsMessageStyle } from "./styles.css";
+import { play } from "cuelume";
 
 
 export default function ConfigScreen() {
@@ -17,6 +18,7 @@ export default function ConfigScreen() {
 		event: React.ChangeEvent<HTMLSelectElement, HTMLSelectElement>,
 		key: string
 	) {
+		play("release");
 		updateSetting(key, event.target.value);
 		if(messageElement.current) {
 			messageElement.current.classList.add("shown");

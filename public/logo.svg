@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 450">
+	<rect width="450" height="450" rx="100" fill="#f4a460"/>
+	<g data-name="智" fill="none" stroke="#000" stroke-width="40">
+		<path d="M41 190.75l85.5-85.5m85.5 85.5-85.5-85.5m110 0H16.5m110 0V19.75"/>
+		<circle cx="342.5" cy="106" r="73.5"/>
+		<path d="M375 253H75c0 170 300 171 300 0Zm-150 0v81"/>
+	</g>
+</svg>
