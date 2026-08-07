@@ -29,13 +29,14 @@ export default {
 	"home.msg-human-made-project": "This project was 100% made by humans! No heartless AI has touched it.",
 
 	// Numbers page
-	"numbers.option.cardinals": "きすう – Cardinal numbers",
-	"numbers.option.hours": "じこく – Time of day",
+	"numbers.option.cardinals": "きすう – Cardinal numbers",  // 基数
+	"numbers.option.hours": "じこく – Time of day",  // 時刻
 	"numbers.setting.show-24h-clock": "24h clock",
 
 	// Vocabulary page
-	"vocabulary.option.family": "かぞく – Family",
-	"vocabulary.option.occupations": "しょくぎょう – Occupations",
+	"vocabulary.option.family": "かぞく – Family",  // 家族
+	"vocabulary.option.positions": "いち – Positions",  // 位置
+	"vocabulary.option.occupations": "しょくぎょう – Occupations",  // 職業
 	"vocabulary.option.misc": "Misc.",
 
 	"vocabulary.family.grandparents": "Grandparents",
@@ -60,4 +61,17 @@ export default {
 	"vocabulary.family.younger-sister": "Younger sister",
 	"vocabulary.family.you": "You 🙂",
 	"vocabulary.family.someone": "Someone",
+
+	"vocabulary.positions.in-front": "In front",
+	"vocabulary.positions.behind": "Behind",
+	"vocabulary.positions.left": "Left",
+	"vocabulary.positions.right": "Right",
+	"vocabulary.positions.adjacent": "Adjacent",
+	"vocabulary.positions.between": "Between",
+	"vocabulary.positions.near": "Near",
+	"vocabulary.positions.above": "Above",
+	"vocabulary.positions.below": "Below",
+	"vocabulary.positions.inside": "Inside",
+	"vocabulary.positions.outside": "Outside",
+	"vocabulary.positions.vicinity": "Vicinity / Neighborhood",
 }

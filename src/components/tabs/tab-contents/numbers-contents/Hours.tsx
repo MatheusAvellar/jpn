@@ -23,7 +23,7 @@ export default function HoursNumbers({ forceSkipState }: HoursNumbersProps) {
 	const [currentMinute, setCurrentMinute] = useState<number>(0);
 	const [isAM, setIsAM] = useState<boolean>(false);
 
-	const [show24h, setShow24h] = useState<boolean>(false);
+	const [show24h, setShow24h] = useState<boolean>(true);
 
 	const displayedTime = useMemo(() => {
 		const pad = (x: number) => `${x}`.padStart(2, "0");
@@ -101,7 +101,7 @@ export default function HoursNumbers({ forceSkipState }: HoursNumbersProps) {
 		<div style={{ display: "grid", gridTemplateRows: "auto 1fr auto" }}>
 			<fieldset style={{ width: "max-content", }}>
 				<label>
-					<input type="checkbox" onChange={onShow24hChanged}/>
+					<input type="checkbox" checked onChange={onShow24hChanged}/>
 					<FormattedMessage id="numbers.setting.show-24h-clock"/>
 				</label>
 			</fieldset>

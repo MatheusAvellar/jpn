@@ -3,11 +3,6 @@ import { style } from "@vanilla-extract/css";
 // TABS
 export const hamburgerMenuBtn = style({
 	padding: "1rem",
-	"@media": {
-		"(max-width: 500px)": {
-			padding: "0.5rem"
-		},
-	},
 	selectors: {
 		"&:hover": {
 			backgroundColor: "var(--accent-light)",

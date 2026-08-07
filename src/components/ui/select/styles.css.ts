@@ -5,6 +5,7 @@ export const selectStyle = style({
 	fontSize: "1rem",
 
 	color: "var(--black-light)",
+	backgroundColor: "var(--white)",
 
 	border: "2px solid var(--grey)",
 	borderRadius: "var(--border-radius-lg)",

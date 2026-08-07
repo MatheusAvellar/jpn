@@ -69,17 +69,24 @@ export class MinuteJP {
 
 	#_toArray() {
 		const powers = splitByPowersOf10(this.value);
-		const lastPower = powers.pop()?.value;
-		if(lastPower === undefined)
+		const last = powers.pop();
+		const lastPower = last?.value;
+		if(!this.value || last === undefined || lastPower === undefined)
 			return [];
 		if(lastPower in minuteEndingsMapping) {
 			const lastCharacter = minuteEndingsMapping[lastPower as keyof typeof minuteEndingsMapping];
 			const regularNumber = new NumberJP(
 				powers.reduce((prev, cur) => prev + cur.value, 0)
 			);
-			return [...regularNumber._toArray(), lastCharacter]
+			return [...regularNumber._toArray(), lastCharacter];
 		}
-		console.warn(`???? ${lastPower} ????`);
+		// If we're here, then lastPower is an exact multiple of 10, larger than 10
+		if(last.power === 10) {
+			const lastCharacter = minuteEndingsMapping[10];
+			const regularNumber = new NumberJP(last.digit);
+			return [...regularNumber._toArray(), lastCharacter];
+		}
+		console.warn(`???? ${last} ????`);
 		return [];
 	}
 

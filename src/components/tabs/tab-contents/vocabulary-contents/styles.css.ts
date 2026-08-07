@@ -1,17 +1,17 @@
 import { style } from "@vanilla-extract/css";
 
 
-export const familyVocab_nextButton = style({
+export const vocab_nextButton = style({
 	float: "right",
 });
-export const familyVocab_questionWrapper = style({
+export const vocab_questionWrapper = style({
 	clear: "both",
 	marginTop: ".5rem",
 	overflowY: "auto",
 });
-export const familyVocab_whoseFamily = style({
+
+export const vocab_marquee = style({
 	fontSize: "2rem",
-	fontWeight: "600",
 	textAlign: "center",
 });
 

@@ -4,7 +4,7 @@ import { Fragment } from "react/jsx-runtime";
 import FamilyTree from "./FamilyTree";
 import { useEffect, useState } from "react";
 import RomajiInput from "@/components/input/RomajiInput";
-import { familyVocab_questionWrapper, familyVocab_whoseFamily } from "./styles.css";
+import { vocab_questionWrapper, vocab_marquee } from "./styles.css";
 import { feedbackSection_labelStyle } from "@/components/input/styles.css";
 import { play } from "cuelume";
 
@@ -144,10 +144,10 @@ export default function VocabFamily({ forceSkipState }: VocabFamilyProps) {
 	}, [forceSkipState]); // skip level whenever parent changes variable
 
 	return <>
-		<section className={familyVocab_questionWrapper}>
+		<section className={vocab_questionWrapper}>
 			<div
-				className={familyVocab_whoseFamily}
-				style={{ color: isYourFamily ? "#2196f3" : "chocolate", }}
+				className={vocab_marquee}
+				style={{ color: isYourFamily ? "#2196f3" : "chocolate", fontWeight: 600 }}
 			>
 				{isYourFamily ? "あなた" : "あいて"}
 			</div>

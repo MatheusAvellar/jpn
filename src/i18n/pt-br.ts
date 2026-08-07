@@ -22,7 +22,7 @@ export default {
 		"O logotipo para esse projeto é uma reimaginação do kanji 智 (ち),",
 		"significando 'conhecimento' ou 'intelecto'.",
 		"Ele era originalmente composto de 大 (\"pessoa\") e 口 (\"boca\"),",
-		"que foram reinterpretdos como olhos, em cima de 甘 (\"doce\"/\"agradável\", uma língua).",
+		"que foram reinterpretados como olhos, em cima de 甘 (\"doce\"/\"agradável\", uma língua).",
 	].join(" "),
 
 	"home.human-made": "Feito Por Humanos",
@@ -35,6 +35,7 @@ export default {
 
 	//
 	"vocabulary.option.family": "かぞく – Família",
+	"vocabulary.option.positions": "いち – Posições",
 	"vocabulary.option.occupations": "しょくぎょう – Profissões",
 	"vocabulary.option.misc": "Misc.",
 
@@ -60,4 +61,17 @@ export default {
 	"vocabulary.family.younger-sister": "Irmã mais nova",
 	"vocabulary.family.you": "Você 🙂",
 	"vocabulary.family.someone": "Alguém",
+
+	"vocabulary.positions.in-front": "Em frente",
+	"vocabulary.positions.behind": "Atrás",
+	"vocabulary.positions.left": "Esquerda",
+	"vocabulary.positions.right": "Direita",
+	"vocabulary.positions.adjacent": "Adjacente",
+	"vocabulary.positions.between": "Entre",
+	"vocabulary.positions.near": "Próximo",
+	"vocabulary.positions.above": "Em cima / Sobre",
+	"vocabulary.positions.below": "Embaixo",
+	"vocabulary.positions.inside": "Dentro",
+	"vocabulary.positions.outside": "Fora",
+	"vocabulary.positions.vicinity": "Vizinhança / Arredores",
 }
