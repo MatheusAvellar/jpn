@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type ReactNode, type SetStateAction } from "react";
+import { useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from "react";
 import { tabStyle, labelStyle, hamburgerMenu, hamburgerMenuBtn } from "./styles.css.ts";
 import { play } from "cuelume";
 
@@ -11,15 +11,34 @@ interface TabHeaderProps {
 export default function TabHeader({ children, setSelectedTab, defaultChecked }: TabHeaderProps) {
 	const tabs = [...children];
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+	const elementRef = useRef<HTMLElement>(null);
+
+	function handleClickOutside(evt: MouseEvent) {
+		const element = elementRef.current;
+		if (element && !element.contains(evt.target as Node)) {
+			setIsMenuOpen(false);
+			onToggle(false);
+		}
+	}
+
+	function onToggle(open: boolean) {
+		document.removeEventListener("mousedown", handleClickOutside);
+		// On open, we add a listener for clicks outside
+		if (open)
+			document.addEventListener("mousedown", handleClickOutside);
+	}
 
 	return (
-		<nav className={tabStyle}>
+		<nav className={tabStyle} ref={elementRef}>
 			<input
 				id="hamburger-menu-button"
 				name="burger-menu"
 				type="checkbox"
 				checked={isMenuOpen}
-				onChange={(e) => setIsMenuOpen(e.target.checked)}
+				onChange={(e) => {
+					setIsMenuOpen(e.target.checked);
+					onToggle(e.target.checked);
+				}}
 				style={{ appearance: "none", position: "absolute" }}/>
 			<label htmlFor="hamburger-menu-button" className={hamburgerMenuBtn}>
 				🟰

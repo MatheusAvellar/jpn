@@ -6,6 +6,7 @@ import { selectStyle } from "@/components/ui/select/styles.css";
 import Button from "@/components/ui/button/Button";
 import { vocab_nextButton } from "./vocabulary-contents/styles.css";
 import VocabPositions from "./vocabulary-contents/VocabPositions";
+import VocabMisc from "./vocabulary-contents/VocabMisc";
 
 
 export default function Vocabulary() {
@@ -31,13 +32,7 @@ export default function Vocabulary() {
 				<option defaultChecked={true} value="family">
 					<FormattedMessage id="vocabulary.option.family"/>
 				</option>
-				<option value="positions">
-					<FormattedMessage id="vocabulary.option.positions"/>
-				</option>
-				<option disabled value="occupations">
-					<FormattedMessage id="vocabulary.option.occupations"/>
-				</option>
-				<option disabled value="misc">
+				<option value="misc">
 					<FormattedMessage id="vocabulary.option.misc"/>
 				</option>
 			</select>
@@ -54,8 +49,8 @@ export default function Vocabulary() {
 					return <VocabFamily forceSkipState={vocabLevel}/>;
 				case "positions":
 					return <VocabPositions forceSkipState={vocabLevel}/>;
-				case "occupations":
 				case "misc":
+					return <VocabMisc forceSkipState={vocabLevel}/>;
 				default:
 					return "";
 			}

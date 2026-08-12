@@ -14,6 +14,11 @@ export const vocab_marquee = style({
 	fontSize: "2rem",
 	textAlign: "center",
 });
+export const vocab_marqueeBig = style({
+	fontSize: "4rem",
+	fontWeight: 600,
+	textAlign: "center",
+});
 
 
 export const familyTree = style({

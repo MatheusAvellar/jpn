@@ -9,7 +9,7 @@ import { play } from "cuelume";
 import { useIntl } from "react-intl";
 
 
-export const positionsOptions = [
+const positionsOptions = [
 	"in-front", "behind",
 	"left", "right", "adjacent",
 	"between", "near",
